@@ -18,9 +18,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/papnkukn/xslx2json"
+    "url": "https://github.com/papnkukn/xlsx2json"
   },
   "bugs": {
-    "url": "https://github.com/papnkukn/xslx2json/issues"
+    "url": "https://github.com/papnkukn/xlsx2json/issues"
   }
 }
