@@ -18,15 +18,15 @@ function help() {
   console.log("  xslx2json [options] <input.xlsx> <output.json>");
   console.log("");
   console.log("Options:");
-  console.log("  -f              Force overwrite");
+  console.log("  --force         Force overwrite file");
   console.log("  --help          Print this message");
   console.log("  --verbose       Enable detailed logging");
-  console.log("  --version, -v   Print version number");
+  console.log("  --version       Print version number");
   console.log("");
   console.log("Examples:");
   console.log("  xlsx2json --version");
   console.log("  xlsx2json --verbose file.xlsx");
-  console.log("  xlsx2json -f file.xlsx file.json");
+  console.log("  xlsx2json --force file.xlsx file.json");
 }
 
 //Command line interface
@@ -39,6 +39,7 @@ for (var i = 0; i < args.length; i++) {
       break;
       
     case "-f":
+    case "--force":
       config.force = true;
       break;
       
@@ -55,6 +56,7 @@ for (var i = 0; i < args.length; i++) {
     default:
       if (args[i].indexOf('-') == 0) {
         console.error("Unknown command line argument: " + args[i]);
+        process.exit(2);
       }
       else if (!config.source) {
         config.source = args[i];

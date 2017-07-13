@@ -21,15 +21,15 @@ Usage:
   xslx2json [options] <input.xlsx> <output.json>
 
 Options:
-  -f              Force overwrite
+  --force         Force overwrite file
   --help          Print this message
   --verbose       Enable detailed logging
-  --version, -v   Print version number
+  --version       Print version number
 
 Examples:
   xlsx2json --version
   xlsx2json --verbose file.xlsx
-  xlsx2json -f file.xlsx file.json
+  xlsx2json --force file.xlsx file.json
 ```
 
 ## Using as library
@@ -82,7 +82,8 @@ xlsx2json('path/to/sample.xlsx', function(error, result) {
       "data": [
         {
           "cell": "A1",
-          "value": "0"
+          "type": "string",
+          "value": "xlsx2json"
         },
         {
           "cell": "A2",
@@ -90,7 +91,9 @@ xlsx2json('path/to/sample.xlsx', function(error, result) {
         },
         {
           "cell": "A3",
-          "value": "1"
+          "value": "1",
+          "display": "1",
+          "format": "0"
         },
         {
           "cell": "A4",
@@ -98,7 +101,9 @@ xlsx2json('path/to/sample.xlsx', function(error, result) {
         },
         {
           "cell": "A5",
-          "value": "0.99"
+          "value": "0.99",
+          "display": "99%",
+          "format": "0%"
         },
         {
           "cell": "A6",
